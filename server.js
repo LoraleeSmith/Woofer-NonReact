@@ -14,7 +14,7 @@ const app = express();
 
 // ROUTES
 const indexRoutes = require('./routes/index'),
-    parkRoutes = require('./routes/park'),
+    parkRoutes = require('./routes/parks'),
     commentRoutes = require('./routes/comments');
 
 // DATABASE
@@ -50,8 +50,8 @@ app.use(function (req, res, next) {
 
 // SERVER
 app.use('/', indexRoutes);
-app.use('/park', parkRoutes);
-app.use('/park/:id/comments', commentRoutes);
+app.use('/parks', parkRoutes);
+app.use('/parks/:id/comments', commentRoutes);
 
 // Define API routes here
 

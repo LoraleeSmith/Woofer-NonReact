@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
             if (err) {
                 console.log("Error: " + err);
             } else {
-                res.render('park/index', { title: 'All Parks', park: allPark, current: pageNum, pages: Math.ceil(count / perPage) });
+                res.render('parks/index', { title: 'All Parks', parks: allPark, current: pageNum, pages: Math.ceil(count / perPage) });
             };
         });
     });

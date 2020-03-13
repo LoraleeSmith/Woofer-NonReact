@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <% if (title === 'Register') { %>
+    <title>RECREO | Register</title>
+    <% } else if (title === 'Log In') { %>
+    <title>RECREO | Log In</title>
+    <% } else if (title === 'All Playgrounds') { %>
+    <title>RECREO | All Playgrounds</title>
+    <% } else if (title === 'Add A Playground') { %>
+    <title>RECREO | Add A Playground</title>
+    <% } else if (title === 'Edit Playground') { %>
+    <title>RECREO | Edit Playground</title>
+    <% } else if (title === 'Add A Comment') { %>
+    <title>RECREO | Add A Comment</title>
+    <% } else if (title === 'Edit Comment') { %>
+    <title>RECREO | Edit Comment</title>
+    <% } else { %>
+    <title>RECREO | Your Next Playtime Location</title>
+    <% } %>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"
+        async></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:700|Open+Sans:400,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <% if (title != 'Home') { %>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand logo-font" href="/">RECREO</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <% if(!currentUser) { %>
+                    <li class="nav-link"><a href="/login">Log In</a></li>
+                    <li class="nav-link"><a href="/register">Sign Up</a></li>
+                    <% } else { %>
+                    <li class="nav-link mute-link">Signed In As <%= currentUser.username %></li>
+                    <li class="nav-link"><a href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <% } %>
+
+    <div class="container space-top">
+        <% if(error && error.length > 0) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <% } else if (success && success.length > 0) { %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+        <% } %>
+    </div>

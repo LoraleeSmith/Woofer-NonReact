@@ -2,7 +2,7 @@
  GENERAL STYLES
 **********************************************/
 body {
-    color: #555f61;
+    color: black;
     font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
@@ -70,7 +70,7 @@ nav a:hover,
 }
 .info-btn {
     background-color:lightgreen;
-    color: #555f61;
+    color: burlywood;
 }
 .login-btn,
     .edit-btn {
@@ -90,7 +90,7 @@ nav a:hover,
     background-color: #FF625E;
 }
 .continue-btn {
-    color: #343535;
+    color: lightgreen;
     font-size: 2rem;
 }
 
@@ -243,7 +243,7 @@ header {
 .list-group-item.active {
     background-color: lightgreen;
     border: 1px solid lightgreen;
-    color: #555f61;
+    color: burlywood;
 }
 .list-group-item.active:hover {
     font-weight: 700;

@@ -2,9 +2,9 @@
 
 <header>
     <div class="container text-center">
-        <h4 class="logo-font md-brand">Where Will Your Next Playdate Be?</h4>
+        <h4 class="logo-font md-brand">Where Will Your Next Play Time Be?</h4>
         <div class="space-top">
-            <a class="btn btn-lg btn-rounded add-btn" href="/playgrounds/new">Add New Playground</a>
+            <a class="btn btn-lg btn-rounded add-btn" href="/parks/new">Add New Park</a>
         </div>
     </div>
 </header>
@@ -14,18 +14,18 @@
 <div class="container space-bottom">
     <div class="row text-center" style="display: flex; flex-wrap: wrap;">
         <div class="col-12">
-            <h3 class="section-heading">Most Popular Playgrounds</h3>
+            <h3 class="section-heading">Most Popular Parks</h3>
         </div>
 
-        <% playgrounds.forEach(function(playground) { %>
+        <% parks.forEach(function(park) { %>
         <div class="col-md-3 col-sm-6 preview-cards">
             <div class="card">
-                <img class="preview-img" src="<%= playground.image %>" alt="<%= playground.name %> Image">
+                <img class="preview-img" src="<%= park.image %>" alt="<%= park.name %> Image">
                 <div class="caption">
-                    <p><%= playground.name %></p>
+                    <p><%= park.name %></p>
                 </div>
                 <p>
-                    <a href="/playgrounds/<%= playground._id %>" class="btn btn-sm btn-rounded info-btn">More Info</a>
+                    <a href="/parks/<%= park._id %>" class="btn btn-sm btn-rounded info-btn">More Info</a>
                 </p>
             </div>
         </div>

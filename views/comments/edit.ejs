@@ -6,7 +6,7 @@
             <h1 class="form-heading text-center">Edit Comment</h1>
         </div>
         <div class="col-12">
-            <form action="/playgrounds/<%= playground_id %>/comments" method="POST">
+            <form action="/parks/<%= park_id %>/comments" method="POST">
                 <div class="form-group">
                     <input id="input" class="form-control" type="text" name="comment[text]" placeholder="comment">
                 </div>
@@ -14,7 +14,7 @@
                     <button type="submit" class="btn btn-lg btn-rounded edit-btn">Submit</button>
                 </div>
             </form>
-            <a class="back-btn" href="/playgrounds"><i class="fas fa-arrow-left"></i></a>
+            <a class="back-btn" href="/parks"><i class="fas fa-arrow-left"></i></a>
         </div>
     </div>
 </div>

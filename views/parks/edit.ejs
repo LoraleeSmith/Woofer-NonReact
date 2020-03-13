@@ -3,27 +3,27 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="form-heading text-center">Edit <%= playground.name %></h1>
+            <h1 class="form-heading text-center">Edit <%= park.name %></h1>
         </div>
         <div class="col-12">
-            <form action="/playgrounds/<%= playground._id %>?_method=PUT" method="POST">
+            <form action="/parks/<%= park._id %>?_method=PUT" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="playground[name]" value="<%= playground.name %>"
+                    <input class="form-control" type="text" name="park[name]" value="<%= park.name %>"
                         placeholder="name">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="playground[image]" value="<%= playground.image %>"
+                    <input class="form-control" type="text" name="park[image]" value="<%= park.image %>"
                         placeholder="image url">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="playground[description]"
-                        value="<%= playground.description %>" placeholder="description">
+                    <input class="form-control" type="text" name="park[description]" value="<%= park.description %>"
+                        placeholder="description">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-danger btn-block"></button>
                 </div>
             </form>
-            <a href="/playgrounds/<%= playground._id %>">Back</a>
+            <a href="/parks/<%= park._id %>">Back</a>
         </div>
     </div>
 </div>

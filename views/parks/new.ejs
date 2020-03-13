@@ -3,26 +3,26 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="form-heading text-center">New Playground</h1>
+            <h1 class="form-heading text-center">New Park</h1>
         </div>
         <div class="col-12">
-            <form action="/playgrounds" method="POST" enctype="multipart/form-data">
+            <form action="/parks" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input id="input" class="form-control" type="text" name="playground[name]" placeholder="name">
+                    <input id="input" class="form-control" type="text" name="park[name]" placeholder="name">
                 </div>
                 <div class="form-group">
-                    <label for="playground-image">Image</label>
-                    <input type="file" id="playground-image" name="image" accept="image/*" required>
+                    <label for="park-image">Image</label>
+                    <input type="file" id="park-image" name="image" accept="image/*" required>
                 </div>
                 <div class="form-group">
-                    <input id="input" class="form-control" type="text" name="playground[description]"
+                    <input id="input" class="form-control" type="text" name="park[description]"
                         placeholder="description">
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-lg btn-rounded add-btn">Submit</button>
                 </div>
             </form>
-            <a class="back-btn" href="/playgrounds"><i class="fas fa-arrow-left"></i></a>
+            <a class="back-btn" href="/parks"><i class="fas fa-arrow-left"></i></a>
         </div>
     </div>
 </div>

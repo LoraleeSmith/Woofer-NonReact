@@ -9,26 +9,26 @@
                 <li class="list-group-item">Features - Coming Soon</li>
             </div>
             <div class="space-top">
-                <a class="back-btn" href="/playgrounds"><i class="fas fa-arrow-left"></i></a>
+                <a class="back-btn" href="/parks"><i class="fas fa-arrow-left"></i></a>
             </div>
         </div>
         <div class="col-md-9 space-bottom">
             <div class="card detail-card">
-                <img class="img-responsive" src="<%= playground.image %>">
+                <img class="img-responsive" src="<%= park.image %>">
                 <div class="card-body">
                     <h6 class="float-right">Free</h6>
-                    <h4><%= playground.name %></h4>
-                    <p><%= playground.description %></p>
+                    <h4><%= park.name %></h4>
+                    <p><%= park.description %></p>
                     <p>
                         <em>
-                            Submitted by <%= playground.author.username %>,
-                            <%= moment(playground.createdAt).fromNow() %>
+                            Submitted by <%= park.author.username %>,
+                            <%= moment(park.createdAt).fromNow() %>
                         </em>
                     </p>
 
-                    <% if(currentUser && playground.author.id.equals(currentUser._id)) { %>
-                    <a href='/playgrounds/<%= playground._id %>/edit' class='btn btn-rounded btn-sm edit-btn'>Edit</a>
-                    <form class="delete-form" action='/playgrounds/<%= playground._id %>?_method=DELETE' method='POST'>
+                    <% if(currentUser && park.author.id.equals(currentUser._id)) { %>
+                    <a href='/parks/<%= park._id %>/edit' class='btn btn-rounded btn-sm edit-btn'>Edit</a>
+                    <form class="delete-form" action='/parks/<%= park._id %>?_method=DELETE' method='POST'>
                         <button class='btn btn-rounded btn-sm delete-btn'>Delete</button>
                     </form>
                     <% } %>
@@ -37,24 +37,23 @@
             </div>
             <div class="card detail-card space-top card-body">
                 <div class="text-right">
-                    <a class="btn btn-rounded btn-md add-btn" href="/playgrounds/<%= playground._id %>/comments/new">Add
+                    <a class="btn btn-rounded btn-md add-btn" href="/parks/<%= park._id %>/comments/new">Add
                         a Comment</a>
                 </div>
                 <hr>
-                <% playground.comments.forEach(function(comment){ %>
+                <% park.comments.forEach(function(comment){ %>
                 <div class="row">
                     <div class="col-md-12">
                         <strong><%= comment.author.username %></strong>
-                        <span class="float-right"><%= moment(playground.createdAt).fromNow() %></span>
+                        <span class="float-right"><%= moment(park.createdAt).fromNow() %></span>
                         <p><%= comment.text %></p>
                         <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
                         <a class="btn btn-rounded btn-sm edit-btn"
-                            href="/playgrounds/<%= playground._id %>/comments/<%= comment._id %>/edit">
+                            href="/parks/<%= park._id %>/comments/<%= comment._id %>/edit">
                             Edit
                         </a>
                         <form class="delete-form"
-                            action="/playgrounds/<%= playground._id %>/comments/<%= comment._id %>?_method=DELETE"
-                            method="POST">
+                            action="/parks/<%= park._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                             <button class='btn btn-rounded btn-sm delete-btn'>Delete</button>
                         </form>
                         <% } %>

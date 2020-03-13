@@ -3,10 +3,10 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="form-heading text-center">Add Comment to <%= playground.name %></h1>
+            <h1 class="form-heading text-center">Add Comment to <%= park.name %></h1>
         </div>
         <div class="col-12">
-            <form action="/playgrounds/<%= playground._id %>/comments" method="POST">
+            <form action="/parks/<%= park._id %>/comments" method="POST">
                 <div class="form-group">
                     <input id="input" class="form-control" type="text" name="comment[text]" placeholder="comment">
                 </div>
@@ -14,7 +14,7 @@
                     <button type="submit" class="btn btn-lg btn-rounded add-btn">Submit</button>
                 </div>
             </form>
-            <a class="back-btn" href="/playgrounds/<%= playground._id %>"><i class="fas fa-arrow-left"></i></a>
+            <a class="back-btn" href="/parks/<%= park._id %>"><i class="fas fa-arrow-left"></i></a>
         </div>
     </div>
 </div>

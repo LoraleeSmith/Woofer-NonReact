@@ -23,7 +23,7 @@ router.post('/', middleware.isLoggedIn, function (req, res) {
     Park.findById(req.params.id, function (err, park) {
         if (err) {
             console.log("Error: " + err);
-            res.redirect('/park');
+            res.redirect('/parks');
         } else {
             Comment.create(req.body.comment, function (err, comment) {
                 if (err) {
@@ -37,7 +37,7 @@ router.post('/', middleware.isLoggedIn, function (req, res) {
                     comment.save();
                     park.comments.push(comment);
                     park.save();
-                    res.redirect('/park/' + park._id);
+                    res.redirect('/parks/' + park._id);
                 };
             });
         };
@@ -72,7 +72,7 @@ router.delete('/:comment_id', middleware.checkCommentOwnership, function (req, r
         if (err) {
             res.redirect('back');
         } else {
-            res.redirect('/park/' + req.params.id);
+            res.redirect('/parks/' + req.params.id);
         }
     });
 });

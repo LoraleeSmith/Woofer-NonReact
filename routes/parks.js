@@ -36,7 +36,7 @@ router.post('/:id', function (req, res) {
 
 // NEW - show form to add park
 router.get('/new', middleware.isLoggedIn, function (req, res) {
-    res.render('park/new', { title: 'Add A Park' });
+    res.render('parks/new', { title: 'Add A Park' });
 });
 
 // SHOW - displays more info about a specific park
@@ -44,7 +44,7 @@ router.get('/:id', function (req, res) {
     // find park with provided ID
     Park.findById(req.params.id).populate('comments').exec(function (err, foundPark) {
         if (err) console.log(err);
-        res.render('park/show', { title: '<%= foundPark.name %>', park: foundPark });
+        res.render('parks/show', { title: '<%= foundPark.name %>', park: foundPark });
     });
     // render show temp with that park
 });
@@ -55,7 +55,7 @@ router.get('/:id/edit', middleware.checkParkOwnership, function (req, res) {
         if (err) {
             res.redirect('back');
         } else {
-            res.render('park/edit', { title: 'Edit A Park', park: foundPark });
+            res.render('parks/edit', { title: 'Edit A Park', park: foundPark });
         };
     });
 });

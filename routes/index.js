@@ -23,7 +23,7 @@ router.post('/register', function (req, res) {
             return res.render('register', { title: 'Register' });
         }
         passport.authenticate('local')(req, res, function () {
-            res.redirect('/park');
+            res.redirect('/parks');
         });
     });
 });
@@ -34,14 +34,14 @@ router.get('/login', function (req, res) {
 // handle login logic
 router.post('/login', passport.authenticate('local',
     {
-        successRedirect: '/park',
+        successRedirect: '/parks',
         failureRedirect: '/login'
     }), function (req, res) {
     });
 // logout route
 router.get('/logout', function (req, res) {
     req.logout();
-    res.redirect('/park');
+    res.redirect('/parks');
 });
 
 module.exports = router;
